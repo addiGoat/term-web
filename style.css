@@ -29,25 +29,32 @@ body {
     border-radius: 20px;
     padding: 18px;
 
+    display: flex;
+}
+
+
+.term-areas {
+    border: 5px solid blue;
     display: grid;
     grid-template-rows: 5fr 1fr;
 }
-
 .term-display {
     border: 5px solid orange;
     display: grid;
-    grid-template-columns: 4fr 2fr;
-}
-
-.terminal-input {
-    border: 5px solid green;
+    grid-template-columns: 3fr 2fr;
 }
 
 .terminal-output {
     border: 5px solid green;
+    min-width: 0;
 }
 
 .terminal-content {
     border: 5px solid green;
     overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.terminal-input {
+    border: 5px solid green;
 }
