@@ -29,6 +29,25 @@ body {
     border-radius: 20px;
     padding: 18px;
 
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+}
 
-    display: flex;
+.term-display {
+    border: 5px solid orange;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+}
+
+.terminal-input {
+    border: 5px solid green;
+}
+
+.terminal-output {
+    border: 5px solid green;
+}
+
+.terminal-content {
+    border: 5px solid green;
+    overflow-wrap: break-word;
 }
