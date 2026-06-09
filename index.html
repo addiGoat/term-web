@@ -14,19 +14,22 @@
         <div class="term-window">
 
             <div class="term-display">
-                <div class="terminal-output">
-                    > Example
+                <div class="terminal-output" id="terminal-output">
+                    <div class="term-mesg">>systems check: all pass bladdy bladdy bladduy blahj</div>
+                    <div class="term-mesg">>oxygen supply: 78%</div>
                 </div>
+
                 <div class="terminal-content">
-                    Nothing to display
+                    Nothing to<br> display
                 </div>
+
                 <div class="terminal-input">
-                    >
-                    <textarea></textarea>
-                   
+                    $
+                    <input type="text" id="term-input" rows="1" spellcheck="false" maxlength="60"></input>
                 </div>
             </div>
 
         </div>
     </body>
+    <script src="index.js" defer></script>
 </html>

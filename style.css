@@ -1,3 +1,8 @@
+@font-face {
+    font-family: VMWare;
+    src: url(vmware.otf.woff2) format(woff2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +29,7 @@ body {
     width: min(1200px, 90vw);
     height: min(800px, 90vh);
     color: green;
-    font-family: Tiny5, Regular;
+    font-family: VMWare;
     font-size: 32px;
     border: 40px outset #211e1a;
     border-radius: 20px;
@@ -46,13 +51,27 @@ body {
 
     width: 100%;
     height: 100%;
+}
 
+input {
+    resize: none;
+    background: none;
+    border: none;
+    color: green;
+    font-size: 32px;
+    padding-left: 4px;
+    width: 100%;
+    font-family: VMWare;
+}
+
+input:focus {
+    outline: none;
 }
 
 .terminal-input,
 .terminal-output,
 .terminal-content {
-    border: 2px solid yellow;
+    border: 4px solid #B6A12A;
     min-width: 0;
     min-height: 0;
     overflow: hidden;
@@ -64,7 +83,9 @@ body {
     grid-area: left;
 
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 .terminal-content {
@@ -74,6 +95,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .terminal-input {
@@ -81,4 +103,9 @@ body {
     margin-top: 8px;
     display: flex;
     align-items: center;
+}
+
+.term-mesg,
+.user-mesg {
+    margin-top: 10px;
 }
