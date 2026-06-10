@@ -21,7 +21,10 @@ function submitCommand(text) {
 }
 
 function runCommand(text) {
-    if (text == "help") {
+    if (text == "") {
+        return;
+    }
+    else if (text == "help") {
         printTermLine(">no help here buddy")
     }
     else if (text == "clear") {
