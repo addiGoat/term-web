@@ -2,31 +2,48 @@ console.log("script loaded");
 const output = document.querySelector("#terminal-output");
 const input = document.querySelector("#term-input");
 
-input.addEventListener("keydown", echoCommand);
+input.addEventListener("keydown", handleKeyPress);
 
-let commands = []
+function handleKeyPress(event) {
+    if (event.key != "Enter") { return; }
+    console.log("Enter pressed");
 
-function echoCommand(event) {
-    key = event.key;
-    console.log(key);
-    if (key == "Enter") {
-        console.log(input.value);
-
-        let command = input.value;
-        addElement(command);
-        
-    }
+    submitCommand(input.value);
 }
 
-function addElement(command) {
+function submitCommand(text) {
+    const userInput = "$" + input.value;
+    printTermLine(userInput);
+    input.value = '';
+    console.log(text);
+
+    runCommand(parseCommand(text));
+}
+
+function runCommand(text) {
+    if (text == "help") {
+        printTermLine(">no help here buddy")
+    }
+    else if (text == "clear") {
+        while (output.firstChild) {
+            output.removeChild(output.lastChild);
+        }
+    }
+    else {
+        printTermLine(">Command not recognized")
+    }
+
+}
+
+function parseCommand(text) {
+    return text.trim().toLowerCase();
+
+}
+
+function printTermLine(text) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("user-mesg")
-
-    const cmdInput = "$" + command;
-    const cmdContent = document.createTextNode(cmdInput);
-
-    newDiv.appendChild(cmdContent);
+    newDiv.appendChild(document.createTextNode(text));
 
     output.append(newDiv);
-    input.value = '';
 }
