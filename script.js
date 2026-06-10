@@ -12,7 +12,7 @@ function handleKeyPress(event) {
 }
 
 function submitCommand(text) {
-    const userInput = "$" + input.value;
+    const userInput = "$" + text;
     printTermLine(userInput);
     input.value = '';
     console.log(text);
